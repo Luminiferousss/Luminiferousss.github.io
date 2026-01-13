@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Zolitaire — a premium solitaire game in development." />
+  <meta name="robots" content="index,follow" />
+  <title>Zolitaire</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --fg: #e9eef5;
+      --muted: #a9b3c3;
+      --link: #cfe0ff;
+      --card: #151924;
+      --border: rgba(255,255,255,0.08);
+      --shadow: rgba(0,0,0,0.35);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fbfcfe;
+        --fg: #0d1220;
+        --muted: #51607a;
+        --link: #1f4bd8;
+        --card: #ffffff;
+        --border: rgba(0,0,0,0.10);
+        --shadow: rgba(0,0,0,0.06);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      letter-spacing: 0.2px;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 26px;
+      box-shadow: 0 14px 40px var(--shadow);
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 32px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 12px 0;
+      color: var(--fg);
+    }
+
+    .muted { color: var(--muted); }
+
+    .links {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      align-items: baseline;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    a:hover, a:focus {
+      border-bottom-color: currentColor;
+      outline: none;
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 99px;
+      background: #7dd3fc;
+      margin: 0 10px 2px 10px;
+      opacity: 0.85;
+    }
+
+    /* Subtle “whisper” divider */
+    hr {
+      border: 0;
+      height: 1px;
+      background: var(--border);
+      margin: 18px 0 12px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="Zolitaire placeholder">
+      <h1>Zolitaire</h1>
+      <p class="muted">
+        A premium solitaire game in development.
+        <span class="dot" aria-hidden="true"></span>
+        Windows on Steam.
+      </p>
+
+      <hr />
+
+      <p>
+        This site is intentionally minimal for now.
+        If you’d like to be notified when there’s something worth seeing,
+        you can reach me at <a href="mailto:contact@zolitairegame.com">contact@zolitairegame.com</a>.
+      </p>
+
+      <div class="links">
+        <!-- Leave these commented out until you have them -->
+        <!-- <a href="https://store.steampowered.com/app/XXXXXXXX/" rel="noopener">Steam page</a> -->
+        <!-- <a href="/press/" rel="noopener">Press kit</a> -->
+      </div>
+
+      <div class="footer">
+        © <span id="year"></span> Zolitaire. All rights reserved.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tiny, harmless JS: keep the year current without maintenance.
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
